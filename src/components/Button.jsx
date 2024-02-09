@@ -3,13 +3,11 @@ import './Button.css'
 
 
 
-export default function Button({ mesaj, text }) {
-  
-  function apasaButon() {
-    return alert(mesaj)
-  }
+export default function Button({ mesaj, text, handleClick }) {
+
+
 
   return (
-    <button onClick={apasaButon}>{text}</button>
+    <button onClick={() => handleClick(mesaj)}>{text}</button>
   )
 }
