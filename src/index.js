@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Main from './components/Main';
 import Button from './components/Button';
+import Button2 from './components/Button2';
 
 const mesaj1 = 'Ai apasat cumva pe buton?'
 const textButon1 = 'Apasa-l'
@@ -16,5 +17,6 @@ root.render(
     <Main />
     <Button mesaj={mesaj1} text={textButon1} />
     <Button mesaj={mesaj2} text={textButon2} />
+    <Button2 text={textButon1}/>
   </React.StrictMode>
 )
