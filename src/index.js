@@ -28,7 +28,7 @@ root.render(
     <Button mesaj={mesaj1} text={textButon1} handleClick={apasaButon} color='green'/>
     <Button mesaj={mesaj2} text={textButon2} handleClick={apasaButon} color='red' />
     <Button mesaj={mesaj3} text={textButon3} handleClick={apasaButon} color='blue'/>
-    <Button2 mesaj={mesaj2} text={textButon2} color='red'/>
+    <Button2 text={textButon2} color='red'/>
     <CountrySelector />
     {/* <Register /> */}
   </React.StrictMode>

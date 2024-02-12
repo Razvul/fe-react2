@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './Button.css'
-import Button from './Button'
 
-export default function Button2({ textButon2, mesaj2, color }) {
-    const [textButon, setTextButon] = useState(textButon2)
+export default function Button2({ text, color }) {
+    const [textButon, setTextButon] = useState('Apasa-l')
     return (
-        <Button text={textButon} mesaj={mesaj2} color={color}
-            handleClick={()=>setTextButon(textButon2)}
-        />
+        <button onClick={() => setTextButon(text)}
+            style={{ border: `1px solid ${color}`, color: `${color}` }}
+        >{textButon}</button>
     )
 }
 
