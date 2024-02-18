@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Button from './Button'
+import Center from './Center'
 
-export default function Main({ text, color }) {
-  const [textButton, setTextButton] = useState('Apasa-l')
+export default function Main({ mesaj, text, color }) {
+  const [textButton, setTextButton] = useState('Apasa butonurile!!!')
 
   function handleButtonClick(textButon) {
     setTextButton(textButon)
@@ -10,10 +11,19 @@ export default function Main({ text, color }) {
 
   return (
     <>
-      <h1>Welcome to Boom Town!</h1>
-      <Button handleClick={() => handleButtonClick(text)} text={textButton}
-        color={color}
+      <Button handleClick={() => handleButtonClick(mesaj[0])}
+        text={text}
+        color={color[0]}
       />
+      <Button handleClick={() => handleButtonClick(mesaj[1])}
+        text={text}
+        color={color[1]}
+      />
+      <Button handleClick={() => handleButtonClick(mesaj[2])}
+        text={text}
+        color={color[2]}
+      />
+      <Center text={textButton} />
     </>
   )
 }
