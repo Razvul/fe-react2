@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Center({ text }) {
+export default function Center({ children }) {
     return (
-        <div>{text}</div>
+        <div>{children}</div>
     )
 }

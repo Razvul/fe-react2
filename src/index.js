@@ -15,6 +15,7 @@ const textButon3 = 'Push'
 
 const mesaje = [mesaj1, mesaj2, mesaj3,]
 const culori = ['green', 'red', 'blue',]
+const texte = [textButon1, textButon2, textButon3]
 
 function apasaButon(mesaj) {
   return alert(mesaj)
@@ -25,8 +26,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <h1>Welcome to Boom Town!</h1>
-    <Main mesaj={mesaje} text={textButon2} color={culori} />
-    {/* <Main text={textButon3} color='yellowgreen' /> */}
+    <Main mesaj={mesaje} text={texte} color={culori} />
     <Button mesaj={mesaj1} text={textButon1} handleClick={() => apasaButon(mesaj1)} color='green' />
     <Button mesaj={mesaj2} text={textButon2} handleClick={() => apasaButon(mesaj2)} color='red' />
     <Button mesaj={mesaj3} text={textButon3} handleClick={() => apasaButon(mesaj3)} color='blue' />
