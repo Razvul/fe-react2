@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from './Button'
 import Center from './Center'
 import Tabla from './Tabla'
+import SetButoane from './SetButoane'
 
 export default function Main({ mesaj, text, color }) {
   const [childrenButton, setChildrenButton] = useState('Apasa butonurile!!!')
@@ -14,6 +15,10 @@ export default function Main({ mesaj, text, color }) {
     setChildrenButton(<Tabla/>)
   }
 
+  function passButtons(){
+    setChildrenButton(<SetButoane mesaj={mesaj} text={text} color={color}/>)
+  }
+
   return (
     <>
       <Button handleClick={() => handleButtonClick(mesaj[0])}
@@ -24,8 +29,7 @@ export default function Main({ mesaj, text, color }) {
         text={text[1]}
         color={color[1]}
       />
-      {/* <Tabla /> */}
-      <Button handleClick={() => handleButtonClick(mesaj[2])}
+      <Button handleClick={passButtons}
         text={text[2]}
         color={color[2]}
       />
