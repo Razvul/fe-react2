@@ -16,9 +16,6 @@ const mesaje = [mesaj1, mesaj2, mesaj3,]
 const culori = ['green', 'red', 'blue',]
 const texte = [textButon1, textButon2, textButon3]
 
-function apasaButon(mesaj) {
-  return alert(mesaj)
-}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
