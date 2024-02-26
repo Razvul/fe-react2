@@ -6,6 +6,21 @@ export default function TablaSah() {
     <section>
         <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
         <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
+
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+
+        <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
+        <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
         <div className='patrat-sah' style={{backgroundColor:'blue'}}></div>
         <div className='patrat-sah' style={{backgroundColor:'red'}}></div>
     </section>
