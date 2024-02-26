@@ -2,26 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Main from './components/Main';
-
-const mesaj1 = 'Ai apasat cumva pe buton?'
-const textButon1 = 'Apasa-l'
-
-const mesaj2 = 'Cum ai ajuns aici?'
-const textButon2 = 'BOOM'
-
-const mesaj3 = 'Bine ai venit in alerta!'
-const textButon3 = 'Push'
-
-const mesaje = [mesaj1, mesaj2, mesaj3,]
-const culori = ['green', 'red', 'blue',]
-const texte = [textButon1, textButon2, textButon3]
+import { Link, Route, Switch } from 'wouter'
+import TablaSah from './components/TablaSah';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>Welcome to Boom Town!</h1>
-    <Main mesaj={mesaje} text={texte} color={culori} />
+    <Link href='/main'>Main</Link>
+    <Link href='/tablasah'>Tabla Sah</Link>
+    <Switch>
+      <Route path='/main' component={Main}/>
+      <Route path='/tablasah' component={TablaSah}/>
+      <Route>404: page not found</Route>
+    </Switch>
+    {/* <Main mesaj={mesaje} text={texte} color={culori} />
+    <TablaSah /> */}
   </React.StrictMode>
 )
