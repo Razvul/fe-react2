@@ -17,7 +17,7 @@ root.render(
     <Switch>
       <Route path='/' component={Main}></Route>
       <Route path='/tablasah' component={TablaSah} > </Route>
-      <Route path='/pokemon'  component={Pokemon}> </Route>
+      <Route path='/pokemon/:'  component={Pokemon}> </Route>
     </Switch>
   </React.StrictMode>
 )
