@@ -15,23 +15,20 @@ root.render(
     <BrowserRouter>
       <Outlet />
       <nav>
-        <Link href='/'>Main</Link>
-        <Link href='/tablasah'>Tabla Sah</Link>
-        <Link href='/pokemon'>Pokemon</Link>
+        <Link to='/'>Main</Link>
+        <Link to='/tablasah'>Tabla Sah</Link>
+        <Link to='/pokemon'>Pokemon</Link>
       </nav>
 
       <Routes>
-        <Route path='/' element={Main} />
-        <Route path='/tablasah' element={TablaSah} />
-        <Route path='/pokemon' element={Pokemon}>
-          {/* <Outlet />
-        <Link href='/pokemon/bulbasaur'>Bulbasaur</Link>
-        <Link href='/pokemon/charmender'>Charmender</Link>
-        <Link href='/pokemon/squirtle'>Squirtle</Link> */}
-          <Route path='/pokemon/bulbasaur' element={Bulbasaur} >  </Route>
-          <Route path='/pokemon/charmender' element={Charmender} > </Route>
-          <Route path='/pokemon/squirtle' element={Squirtle} >  </Route>
+        <Route path='/' element={<Main />} />
+        <Route path='tablasah' element={<TablaSah />} />
+        <Route path='pokemon' element={<Pokemon />}>
+          <Route path=':pokemon/:bulbasaur' element={<Bulbasaur />} />
+          <Route path=':pokemon/:charmender' element={<Charmender />} />
+          <Route path=':pokemon/:squirtle' element={<Squirtle />} />
         </Route>
-      </Routes></BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
