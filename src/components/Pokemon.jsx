@@ -1,59 +1,52 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useState } from "react"
 import { Link, Outlet } from "react-router-dom"
 
-const url = 'https://unpkg.com/pokeapi-js-wrapper/dist/index.js'
+
+const Pokedex = require("pokeapi-js-wrapper")
+const P = new Pokedex.Pokedex()
 
 export default function Pokemon() {
 
-    const Pokedex = require("pokeapi-js-wrapper")
-    const P = new Pokedex.Pokedex()
 
-    useEffect(() => {
-        const script = document.createElement("script")
-        script.src = url
-        script.async = true
-        document.body.appendChild(script)
-        // console.log(script)
-
-        // (async () => {
-        //     const golduck = await P.getPokemonByName('golduck')
-        //     console.log(golduck)
-        // })();
-        return () => {
-            document.body.removeChild(script)
-        }
-    }, [])
-
-
-    P.getPokemonByName('charizard').then(function (response) {
-        // response.JSON()
-        pokemonNume = response.name
-        console.log(response)
-    })
+    const [listaPokemoni, setListaPokemoni] = useState('')
+    // const [listaPokemoniImagine, setListaPokemoniImagine] = useState('')
 
     const interval = {
         offset: 0,
-        limit: 9,
+        limit: 12,
     }
 
-    P.getPokemonsList(interval).then(function (response) {
-        console.log(response)
-    })
+    useEffect(() => {
+        P.getPokemonsList(interval).then(function (response) {
+            console.log(response)
+            setListaPokemoni(response)
+            console.log(listaPokemoni)
+        })
 
+        // P.getPokemonFormByName(interval).then(function (response){
+        //     console.log(response)
+        //     setListaPokemoni(response)
+        //     console.log(listaPokemoni)
+        // })
+    }, [])
 
-    let pokemonNume = ''
-
-    console.log(pokemonNume)
     return (
         <div>
             Aici avem un pokemon
-            <nav>
+            {/* <nav>
                 <Link to='bulbasaur'>Bulbasaur</Link>
                 <Link to='charmender'>Charmender</Link>
                 <Link to='squirtle'>Squirtle</Link>
                 <Outlet />
-                <h1>{pokemonNume}</h1>
-            </nav>
+            </nav> */}
+            <div style={{ display: "flex", justifyContent: 'space-around' }}>
+                {listaPokemoni && listaPokemoni.results.map(pokemon => (
+                    <div key={pokemon.id}>
+                        <p>{pokemon.name}</p>
+                        <img src={pokemon.url} alt={pokemon.nume} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
