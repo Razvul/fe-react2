@@ -4,3 +4,7 @@
     padding: 5px;
     margin: 5px;
 }
+.pokemon:hover{
+    cursor: pointer;
+    /* border-bottom: 2px solid black; */
+}
