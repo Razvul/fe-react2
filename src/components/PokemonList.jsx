@@ -15,21 +15,18 @@ export default function PokemonList() {
 
     const interval = {
         offset: 10,
-        limit: 19,
+        limit: 10,
     };
 
     const navigate = useNavigate()
 
     useEffect(() => {
         P.getPokemonsList(interval).then(async (response) => {
-            // console.log(response)
             setListaPokemoni(response)
 
             response.results.map((pokemon, i) => {
                 P.getPokemonByName(pokemon.name).then(
-                    // console.log(pokemon),
                     async (raspuns) => {
-                        // console.log(raspuns)
                         response.results[i].details = raspuns
                         setListaPokemoni(response)
                     }

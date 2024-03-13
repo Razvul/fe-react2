@@ -1,0 +1,19 @@
+.details {
+    display: flex;
+    justify-content: space-around;
+}
+
+ol,
+ul {
+    display: flex;
+    flex-direction: column;
+}
+
+ul li,
+ol li {
+    text-align: start;
+}
+
+.nume-pokemon {
+    text-transform: capitalize;
+}
